@@ -1,5 +1,6 @@
 import { useTrading } from '../context/TradingContext';
 import { useMarketClock } from '../hooks/useMarketClock';
+import { AssetTicker } from './AssetTicker';
 
 const MARKETS: Record<string, { hours: string; status: string }> = {
   TOKYO: { hours: '00:00-09:00 UTC', status: 'ASIA-PACIFIC' },
@@ -18,7 +19,7 @@ export function TopBar() {
     <div className="topbar">
       <div className="topbar-left">
         <div className="logo">ST LABS</div>
-        <span className="version">COCKPIT v7.0</span>
+        <span className="version">v7.0</span>
       </div>
 
       <div className="topbar-center">
@@ -36,6 +37,8 @@ export function TopBar() {
       </div>
 
       <div className="topbar-right">
+        <AssetTicker />
+        <div className="clock-divider" />
         <div className="clock-group">
           <div className="clock-local">
             <span className="cl-time">
@@ -44,13 +47,11 @@ export function TopBar() {
             </span>
             <span className="cl-zone">LOCAL</span>
           </div>
-          <div className="clock-divider" />
           <div className="clock-market">
             <span className="cm-session">{clock.session}</span>
             <span className="cm-hours">{market.hours}</span>
           </div>
         </div>
-        <div className="clock-date">{clock.date}</div>
       </div>
     </div>
   );
