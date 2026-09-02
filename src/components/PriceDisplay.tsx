@@ -235,7 +235,7 @@ function drawGrid(
   chartW: number,
   chartH: number,
   padTop: number,
-  padRight: number,
+  _padRight: number,
   min: number,
   max: number,
   _decimals: number
@@ -270,7 +270,7 @@ function drawGrid(
 function drawPriceAxis(
   ctx: CanvasRenderingContext2D,
   w: number,
-  h: number,
+  _h: number,
   padRight: number,
   padTop: number,
   chartH: number,
@@ -318,7 +318,7 @@ function drawTimeAxis(
 function drawLine(
   ctx: CanvasRenderingContext2D,
   data: number[],
-  chartW: number,
+  _chartW: number,
   color: string,
   toX: (i: number) => number,
   toY: (p: number) => number
@@ -350,7 +350,7 @@ function drawLine(
 function drawArea(
   ctx: CanvasRenderingContext2D,
   data: number[],
-  chartW: number,
+  _chartW: number,
   totalH: number,
   color: string,
   toX: (i: number) => number,
